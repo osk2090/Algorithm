@@ -6,10 +6,10 @@ public class Main {
     public String solution(String str) {
         String answer = "";
         for (char x : str.toCharArray()) {
-            if (Character.isLowerCase(x)) {
-                answer += Character.toUpperCase(x);
+            if (x >= 97 && x <= 122) {
+                answer += (char) (x - 32);
             } else {
-                answer += Character.toLowerCase(x);
+                answer += (char) (x + 32);
             }
         }
         return answer;
@@ -19,6 +19,6 @@ public class Main {
         Main m = new Main();
         Scanner sc = new Scanner(System.in);
         String str = sc.next();
-        System.out.println(m.solution(str));
+        System.out.print(m.solution(str));
     }
 }
