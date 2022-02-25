@@ -1,0 +1,12 @@
+public String solution(String str) {
+String answer = "";
+
+return answer;
+}
+
+public static void main(String[] args) {
+Main m = new Main();
+Scanner sc = new Scanner(System.in);
+String str = sc.nextLine();
+System.out.println(m.solution(str));
+}
