@@ -1,15 +1,11 @@
-package 회문문자열;
+package 숫자만추출;
 
 import java.util.Scanner;
 
 public class Main {
-    public String solution(String str) {
-        String answer = "YES";
-        String tmp = new StringBuilder(str).reverse().toString();
-        if (str.equalsIgnoreCase(tmp)) {
-            return answer;
-        }
-        return "NO";
+    public int solution(String s) {
+        s = s.toUpperCase().replaceAll("[A-Z]", "");
+        return Integer.parseInt(s);
     }
 
     public static void main(String[] args) {
