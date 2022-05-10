@@ -1,33 +1,34 @@
 package 큰수출력하기;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
-    public String[] solution(int n, String str) {
-        String[] answer = str.split(" ");
-        System.out.println(Arrays.toString(answer));
-
-        int[] a = new int[answer.length];
-
-        for (int i = 0; i <= answer.length; i++) {
-            a[i] = Integer.parseInt(answer[i]);
-        }
-
-        for (int i = 0; i < a.length; i++) {
-            if (a[i] >= n) {
-                a[i] = a[i];
+    public ArrayList<Integer> solution(int n, int[] arr) {
+        ArrayList<Integer> answer = new ArrayList<>();
+        answer.add(arr[0]);
+        for (int i = 1; i < n; i++) {
+            if (arr[i] > arr[i - 1]) {
+                answer.add(arr[i]);
             }
         }
-        System.out.println(Arrays.toString(a));
         return answer;
     }
 
     public static void main(String[] args) {
         Main m = new Main();
         Scanner sc = new Scanner(System.in);
+
         int n = sc.nextInt();
-        String str = sc.next();
-        System.out.println(m.solution(n,str));
+        int[] arr = new int[n];
+
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+        }
+
+        for (int x : m.solution(n, arr)) {
+            System.out.print(x + " ");
+        }
     }
 }
